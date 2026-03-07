@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fleur — Weekly Planner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo-block">
+      <div class="logo">fl<em>eur</em></div>
+      <div class="tagline">weekly planner</div>
+    </div>
+    <div class="deco">✦ ✿ ✦</div>
+    <div class="week-nav">
+      <div class="week-label" id="weekLabel"></div>
+      <div class="nav-btns">
+        <button class="nav-btn" onclick="changeWeek(-1)">‹</button>
+        <button class="nav-btn" onclick="changeWeek(0)" style="font-size:9px;letter-spacing:.05em">hoje</button>
+        <button class="nav-btn" onclick="changeWeek(1)">›</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="intention-row">
+    <span class="intention-label">✦ intenção da semana —</span>
+    <input class="intention-input" id="intentionInput" type="text"
+           placeholder="O que você quer cultivar nessa semana?"/>
+  </div>
+
+  <div class="cat-row" id="catRow">
+    <span class="cat-label">filtrar</span>
+    <button class="cat-chip active" id="catAllBtn" onclick="toggleAllCats()">todas</button>
+  </div>
+
+  <div class="grid-scroll">
+    <div class="planner-grid" id="plannerGrid"></div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="notes-card">
+      <div class="notes-title">notas da semana</div>
+      <textarea class="notes-area" id="weekNotes"
+                placeholder="pensamentos, ideias, lembretes…" rows="6"></textarea>
+    </div>
+    <div class="notes-card">
+      <div class="notes-title">como você está?</div>
+      <div class="mood-grid" id="moodGrid"></div>
+    </div>
+  </div>
+
+  <footer>
+    <span id="footerStats"></span>
+    <span>toque em + para adicionar</span>
+  </footer>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
