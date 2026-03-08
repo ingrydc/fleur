@@ -51,7 +51,7 @@ function fmt(d) {
 function getWeekStart(offset) {
   const t = today();
   const dow = t.getDay();
-  return addDays(t, (dow === 0 ? -6 : 1 - dow) + offset * 7);
+  return addDays(t, -dow + offset * 7);
 }
 
 function esc(s) {
