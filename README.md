@@ -2,6 +2,10 @@
 
 Um planner semanal delicado e funcional, construído com HTML, CSS e JavaScript puro. Sem dependências, sem frameworks.
 
+## 🔗 Demo
+
+**[ingrydc.github.io/fleur](https://ingrydc.github.io/fleur/)**
+
 ## ✨ Funcionalidades
 
 - **Planejamento semanal** com navegação entre semanas
@@ -24,21 +28,10 @@ fleur-planner/
 └── app.js       — lógica, estado e renderização
 ```
 
-## 🚀 Como usar
-
-Basta abrir o `index.html` no navegador — não precisa de servidor ou instalação.
-
-Para rodar com live reload durante o desenvolvimento:
-
-```bash
-npx serve .
-# ou
-python3 -m http.server
-```
-
 ## 📱 Responsividade
 
 Testado em:
+
 - Desktop (960px+)
 - iPad landscape e portrait
 - iPhone (até 375px)
