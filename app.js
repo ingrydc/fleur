@@ -176,6 +176,10 @@ let touchFromDs = null;
 let ghostEl = null;
 
 function onTouchStart(id, ds, e) {
+  // don't drag if touching interactive elements
+  const tag = e.target.tagName.toLowerCase();
+  const cls = e.target.className || '';
+  if (tag === 'button' || tag === 'input' || cls.includes('pill-check') || cls.includes('pill-del') || cls.includes('pill-tag') || cls.includes('cat-option')) return;
   touchTask = id;
   touchFromDs = ds;
   const pill = document.getElementById('pill-' + id);
@@ -308,11 +312,10 @@ function render() {
         <div class="day-month">${PT_MONTHS[d.getMonth()]}</div>
         <div class="day-count">${tasks.length > 0 ? `${tasks.filter(t=>t.done).length}/${tasks.length}` : ''}</div>
       </div>
-      <div class="day-tasks">${tasks.map(t => taskHTML(t, ds)).join('')}</div>
-      <div class="day-drop-zone" data-ds="${ds}"
+      <div class="day-tasks day-drop-zone" data-ds="${ds}"
            ondragover="onDropZoneDragOver(event)"
            ondragleave="onDropZoneDragLeave(event)"
-           ondrop="onDropZoneDrop('${ds}',event)"></div>
+           ondrop="onDropZoneDrop('${ds}',event)">${tasks.map(t => taskHTML(t, ds)).join('')}</div>
       <button class="add-task-btn" onclick="openInline('${ds}')">
         <span style="font-size:15px;line-height:1">+</span>
       </button>
@@ -350,10 +353,9 @@ function taskHTML(t, ds) {
     <div class="task-pill ${t.done ? 'done' : ''}" id="pill-${t.id}"
          draggable="true"
          ondragstart="onDragStart('${t.id}','${ds}',event)"
-         ondragend="onDragEnd('${t.id}')">
-      <span class="pill-drag"
-            ontouchstart="onTouchStart('${t.id}','${ds}',event)"
-            title="arrastar">⠿</span>
+         ondragend="onDragEnd('${t.id}')"
+         ontouchstart="onTouchStart('${t.id}','${ds}',event)">
+      <span class="pill-drag" title="arrastar">⠿</span>
       <button class="pill-check" onclick="toggleTask('${t.id}')">
         <div class="check-dot"></div>
       </button>

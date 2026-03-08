@@ -291,7 +291,6 @@ header {
 .day-col.today .day-count { color: var(--accent); }
 
 /* ── TASKS ── */
-.day-tasks { flex: 1; display: flex; flex-direction: column; gap: 3px; }
 
 /* ── TASK PILL ── */
 .task-pill {
@@ -450,9 +449,17 @@ header {
 .day-drop-zone {
   min-height: 24px;
   border: 1px dashed transparent;
-  transition: all .15s;
+  transition: border-color .15s, background .15s;
   border-radius: 1px;
-  margin-top: 3px;
+}
+
+/* day-tasks doubles as drop zone */
+.day-tasks.day-drop-zone {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-bottom: 4px;
 }
 
 .day-drop-zone.drag-over { border-color: var(--accent2); background: rgba(196,96,122,.06); }
