@@ -2,6 +2,10 @@
 
 Um planner semanal delicado e funcional, construído com HTML, CSS e JavaScript puro. Sem dependências, sem frameworks.
 
+## 🔗 Demo
+
+**[ingrydc.github.io/fleur](https://ingrydc.github.io/fleur/)**
+
 ## ✨ Funcionalidades
 
 - **Planejamento semanal** com navegação entre semanas
@@ -14,23 +18,25 @@ Um planner semanal delicado e funcional, construído com HTML, CSS e JavaScript 
 - **Tracker de humor** — registre como você está em cada dia
 - **Notas da semana** — área livre para pensamentos e lembretes
 - **Persistência** — tudo salvo automaticamente no localStorage
+- **PWA** — pode ser instalado na tela inicial do iPhone e iPad
 
 ## 📁 Estrutura
 
 ```
-fleur-planner/
-├── index.html   — estrutura e marcação
-├── style.css    — todo o visual e responsividade
-└── app.js       — lógica, estado e renderização
+fleur/
+├── icons/           — ícones PWA (192px, 512px) e Apple touch icon (180px)
+├── index.html       — estrutura e marcação
+├── style.css        — todo o visual e responsividade
+├── app.js           — lógica, estado e renderização
+├── manifest.json    — configuração PWA
+├── favicon.ico      — ícone da aba do browser
+└── logo.png         — logo do projeto
 ```
-
-## 🔗 Demo
-
-**[ingrydc.github.io/fleur](https://ingrydc.github.io/fleur/)**
 
 ## 📱 Responsividade
 
 Testado em:
+
 - Desktop (960px+)
 - iPad landscape e portrait
 - iPhone (até 375px)
