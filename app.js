@@ -10,6 +10,7 @@ const CATS = [
   { id: 'trabalho', label: 'trabalho', color: '#8a9e8a' },
   { id: 'saude',    label: 'saúde',    color: '#d4896a' },
   { id: 'social',   label: 'social',   color: '#a89ab8' },
+  { id: 'estudo',   label: 'estudo',   color: '#7a9bb5' },
   { id: 'outro',    label: 'outro',    color: '#c9a46a' },
 ];
 
